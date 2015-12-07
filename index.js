@@ -373,6 +373,10 @@ var drawer = React.createClass({
       return
     }
 
+    if(!this.props.acceptPan){
+      return
+    }
+
     var absRelMoveX = this.props.side === 'left'
       ? this._open ? this.state.viewport.width - gestureState.moveX : gestureState.moveX
       : this._open ? gestureState.moveX : this.state.viewport.width - gestureState.moveX
