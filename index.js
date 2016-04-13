@@ -326,7 +326,12 @@ var drawer = React.createClass({
 
   open () {
     this.props.onOpenStart && this.props.onOpenStart()
-    tween({
+
+    if (this.currentTween) {
+      this.currentTween.terminate();
+    }
+
+    this.currentTween = tween({
       start: this._left,
       end: this.getOpenLeft(),
       duration: this.props.tweenDuration,
@@ -345,7 +350,12 @@ var drawer = React.createClass({
 
   close () {
     this.props.onCloseStart && this.props.onCloseStart()
-    tween({
+
+    if (this.currentTween) {
+      this.currentTween.terminate();
+    }
+
+    this.currentTween = tween({
       start: this._left,
       end: this.getClosedLeft(),
       easingType: this.props.tweenEasing,
