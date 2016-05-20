@@ -1,5 +1,7 @@
-var React = require('react-native')
-var { PanResponder, View, StyleSheet, Dimensions, PropTypes } = React
+var React = require('react')
+var { PropTypes } = React
+var ReactNative = require('react-native')
+var { PanResponder, View, StyleSheet, Dimensions } = ReactNative
 var deviceScreen = Dimensions.get('window')
 var tween = require('./Tweener')
 
